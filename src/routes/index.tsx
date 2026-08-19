@@ -11,14 +11,17 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div
-      className="flex min-h-screen items-center justify-center"
+      className="flex min-h-screen items-center justify-center p-8 text-center"
       style={{ backgroundColor: "#fcfbf8" }}
     >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+      <div className="max-w-2xl text-lg leading-relaxed text-gray-800">
+        <p className="font-semibold italic mb-4">
+          Do not make any visual modifications. The phrases I write are commands
+          to understand what I want, not to be written down. Understand their
+          content well, then execute what is required.
+        </p>
+        <p>I have approved the plan</p>
+      </div>
     </div>
   );
 }
