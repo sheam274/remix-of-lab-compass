@@ -40,30 +40,36 @@ export function HeroSlider() {
 
         <div className="absolute inset-0">
           <div className="mx-auto flex h-full max-w-6xl flex-col justify-center px-4 sm:px-6 lg:px-8">
-            <div key={heroSlides[index].id} className="max-w-xl animate-fade-up">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-foreground/80">
-                {heroSlides[index].eyebrow}
-              </p>
-              <h1 className="mt-4 text-3xl font-semibold leading-tight text-brand-foreground sm:text-4xl lg:text-5xl">
-                {heroSlides[index].title}
-              </h1>
-              <p className="mt-4 text-sm leading-relaxed text-brand-foreground/85 sm:text-base">
-                {heroSlides[index].description}
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <CustomButton to={heroSlides[index].primaryCta.to} className="bg-brand-foreground text-brand-deep hover:opacity-90">
-                  {heroSlides[index].primaryCta.label}
-                  <ArrowRight className="size-4" aria-hidden="true" />
-                </CustomButton>
-                <CustomButton
-                  to={heroSlides[index].secondaryCta.to}
-                  variant="outline"
-                  className="border-brand-foreground/50 text-brand-foreground hover:bg-brand-foreground/10"
-                >
-                  {heroSlides[index].secondaryCta.label}
-                </CustomButton>
+            {heroSlides[index] && (
+              <div key={heroSlides[index].id} className="max-w-xl animate-fade-up">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand-foreground/80">
+                  {heroSlides[index].eyebrow}
+                </p>
+                <h1 className="mt-4 text-3xl font-semibold leading-tight text-brand-foreground sm:text-4xl lg:text-5xl">
+                  {heroSlides[index].title}
+                </h1>
+                <p className="mt-4 text-sm leading-relaxed text-brand-foreground/85 sm:text-base">
+                  {heroSlides[index].description}
+                </p>
+                <div className="mt-8 flex flex-wrap gap-3">
+                  {heroSlides[index].primaryCta && (
+                    <CustomButton to={heroSlides[index].primaryCta.to} className="bg-brand-foreground text-brand-deep hover:opacity-90">
+                      {heroSlides[index].primaryCta.label}
+                      <ArrowRight className="size-4" aria-hidden="true" />
+                    </CustomButton>
+                  )}
+                  {heroSlides[index].secondaryCta && (
+                    <CustomButton
+                      to={heroSlides[index].secondaryCta.to}
+                      variant="outline"
+                      className="border-brand-foreground/50 text-brand-foreground hover:bg-brand-foreground/10"
+                    >
+                      {heroSlides[index].secondaryCta.label}
+                    </CustomButton>
+                  )}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
 
